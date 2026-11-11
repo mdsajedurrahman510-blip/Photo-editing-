@@ -1,0 +1,28 @@
+AI Photo Studio Pro — আপগ্রেডেড প্রজেক্ট
+
+এই ZIP-এ আছে:
+- Photo-only responsive Next.js web app
+- Browser-এর ভিতরে basic non-generative photo enhancement
+- Original/processed preview ও JPG download
+- Sequential batch photo processing ও ZIP export
+- Individual passport print sheet (mm/DPI ভিত্তিক)
+- Two-person paired canvas (দুইজনকে একই ফ্রেমে রেখে নির্দিষ্ট মাপ)
+- Optional FastAPI/OpenCV CPU engine
+- Optional rembg integration point (মডেল ইনস্টল না থাকলে unavailable দেখায়)
+- Android থেকে deployment-এর বাংলা গাইড
+
+গুরুত্বপূর্ণ সীমাবদ্ধতা:
+- এটি Remini/Gemini-মানের generative face restoration নয়।
+- Built-in browser engine আলো, টোন, হালকা noise softening ও sharpening করে; হারানো মুখের ডিটেইল বানায় না।
+- Background replacement-এর জন্য Python engine-এ rembg ও model weights ইনস্টল করতে হবে।
+- Clothing-only segmentation/replacement এখনো নেই; general photo adjustments পোশাকেও প্রভাব ফেলে।
+- Paired canvas-এর মাপ পুরো দুই-ব্যক্তির ছবির মাপ; দুজনের আলাদা passport crop নয়।
+- ছবি browser tab-এর memory-তে থাকে; reload/বন্ধ করলে আবার upload করতে হবে।
+- Online deploy করার আগে README_BN.md এবং DEPLOY_FROM_ANDROID_BN.md পড়ুন।
+
+পরীক্ষা:
+- 15টি logic test পাস
+- Python/FastAPI engine-এর 3টি test পাস
+- Python compile পাস
+- 45টি TypeScript/TSX ফাইলে syntax check পাস
+- সম্পূর্ণ Next.js production build এই পরিবেশে যাচাই করা যায়নি, কারণ npm package registry-তে নেটওয়ার্ক/DNS সংযোগ পাওয়া যায়নি।
